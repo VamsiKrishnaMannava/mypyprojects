@@ -1,5 +1,7 @@
-import pandas as pd
+#pip install "setuptools<82.0.0"
 
+import pandas as pd
+# pyrefly: ignore [missing-import]
 from ydata_profiling import ProfileReport
 
 #Load data
