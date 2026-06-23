@@ -6,6 +6,7 @@ import os
 import time
 
 from sklearn.compose import ColumnTransformer
-from sklearn.pipeline import
+from sklearn.pipeline import make_pipeline
+
 
 
