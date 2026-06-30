@@ -1,0 +1,11 @@
+import duckdb
+
+duckdb.query("""
+SELECT distinct RTPLOG
+FROM 'C:\\Users\\vakmannava\\Downloads\\parquettest_4\\kingfisher_core.mv_rtplog\\*.parquet'
+""").show()
+
+
+
+
+
