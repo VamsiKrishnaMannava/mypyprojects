@@ -22,7 +22,34 @@ data = pd.read_csv("https://archive.ics.uci.edu/ml/machine-learning-databases/ad
     "capital-gain", "capital-loss", "hours-per-week", "native-country", "income"
 ])
 
-print(data.head())
 # Drop rows with missing values
-# data.replace(' ?', np.nan, inplace=True)
-# data.dropna(inplace=True)
+data.replace(' ?', np.nan, inplace=True)
+data.dropna(inplace=True)
+
+# print(data.dtypes)
+x = data.drop("income", axis=1)
+y = data["income"].apply(lambda x: x.strip() == ">50K")
+
+# # Identify column types
+cat_cols = x.select_dtypes(include='object').columns.tolist()
+num_cols = x.select_dtypes(exclude='object').columns.tolist()
+print(cat_cols) 
+print(num_cols)
+
+# print("************************************")
+# print(x.select_dtypes(include='object').head().to_string())
+# print("************************************")
+# print(data[cat_cols].head().to_string())
+
+# # split data
+# x_train, x_test, y_train, y_test = train_test_split(x,y, stratify=y, test_size=0.2, random_state=42)
+
+# print(x_train.shape, x_test.shape, y_train.shape, y_test.shape)
+
+
+# preprocessor = ColumnTransformer([
+#     ("onehot",OneHotEncoder(handle_unknown='ignore'),cat_cols),
+#     ("scale",StandardScaler(),num_cols)
+# ])
+
+# Define modls
