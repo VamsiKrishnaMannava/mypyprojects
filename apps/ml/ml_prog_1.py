@@ -42,7 +42,7 @@ print(num_cols)
 # print(data[cat_cols].head().to_string())
 
 # # split data
-# x_train, x_test, y_train, y_test = train_test_split(x,y, stratify=y, test_size=0.2, random_state=42)
+x_train, x_test, y_train, y_test = train_test_split(x,y, stratify=y, test_size=0.2, random_state=42)
 
 # print(x_train.shape, x_test.shape, y_train.shape, y_test.shape)
 
